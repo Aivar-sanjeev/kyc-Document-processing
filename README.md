@@ -104,8 +104,8 @@ Unsupported documents return **422** with `error: unsupported_document`, `detail
 | | |
 |---|---|
 | **First commit** (root of `main`) | `3f9cdcc` — **2026-05-04 00:03:42 UTC** |
-| **Latest commit** (`main` tip) | `d9cd9f9` — **2026-05-04 06:26:33 UTC** |
-| **Elapsed (root → tip)** | **6 h 22 m 51 s** (22,971 s) across **5** commits on `main` |
+| **Latest commit** (`main` tip) | `48b5b36` — **2026-05-04 06:39:19 UTC** |
+| **Elapsed (root → tip)** | **6 h 35 m 37 s** (23,737 s) across **6** commits on `main` |
 
 Recompute (PowerShell, repo root):
 
