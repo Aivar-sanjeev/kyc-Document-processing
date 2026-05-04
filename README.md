@@ -95,6 +95,31 @@ Unsupported documents return **422** with `error: unsupported_document`, `detail
 
 ---
 
+## Run metadata (models, duration, tech stack)
+
+**Repository:** [github.com/Aivar-sanjeev/kyc-Document-processing](https://github.com/Aivar-sanjeev/kyc-Document-processing)
+
+Use the table for each **`POST /process`** benchmark or batch test run. Record **started/finished** in UTC and **wall duration** with a stopwatch or script wrapper.
+
+### Tech stack
+
+Python 3, **FastAPI**, **uvicorn**, **httpx** / OpenAI-compatible client, **NVIDIA NIM Vision**, **pytest**, **Pillow** / PDF rasterization as applicable.
+
+### Models used (from `.env`)
+
+| Variable | Default | Notes |
+|----------|---------|--------|
+| `VISION_MODEL` | `meta/llama-3.2-90b-vision-instruct` | Set in `.env`; `USE_MOCK_VISION=true` skips NIM. |
+
+### Run log (fill per execution)
+
+| Task / run | Command | Models used | Tech stack | Started (UTC) | Finished (UTC) | Wall duration |
+|------------|---------|-------------|------------|---------------|----------------|-----------------|
+| Example single document | `curl -X POST …/process -F "file=@…"` | `VISION_MODEL` from `.env` | FastAPI + NIM vision | — | — | — |
+| Test suite | `pytest -q` | mock or live per `.env` | pytest + pipeline | — | — | — |
+
+---
+
 ## Response shape (success)
 
 JSON includes:
