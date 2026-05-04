@@ -1,0 +1,26 @@
+{
+  "description": "Demonstration matrix for the KYC pipeline (CI uses stubbed vision; NIM can consume the PNGs directly).",
+  "fixtures": [
+    {
+      "file": "tests/fixtures/synthetic_aadhaar.png",
+      "expected_document_type": "aadhaar",
+      "notes": "Synthetic layout cue only; with real NIM expect aadhaar + masked output."
+    },
+    {
+      "file": "tests/fixtures/synthetic_pan.png",
+      "expected_document_type": "pan",
+      "notes": "Synthetic PAN-style card for live model smoke tests."
+    },
+    {
+      "file": "tests/fixtures/synthetic_voter_degraded.png",
+      "expected_document_type": "voter_id",
+      "notes": "Degraded voter-style scan (blur/upscale artifacts). Pipeline tests assert low_scan_quality warnings when the model reports them."
+    }
+  ],
+  "automated_tests": [
+    "tests/test_pipeline_demo.py — stubbed vision: aadhaar, pan, passport MRZ, unsupported, voter+degraded",
+    "tests/test_mask.py — masking and address scrub",
+    "tests/test_mrz.py — TD3 checksums",
+    "tests/test_validate.py — PAN + DL expiry"
+  ]
+}
