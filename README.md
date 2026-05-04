@@ -107,6 +107,8 @@ Unsupported documents return **422** with `error: unsupported_document`, `detail
 | **Latest commit** (`main` tip) | `48b5b36` — **2026-05-04 06:39:19 UTC** |
 | **Elapsed (root → tip)** | **6 h 35 m 37 s** (23,737 s) across **6** commits on `main` |
 
+*Tip hash and “latest” time advance with new commits; the script below always matches your clone.*
+
 Recompute (PowerShell, repo root):
 
 ```powershell
