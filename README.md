@@ -99,6 +99,23 @@ Unsupported documents return **422** with `error: unsupported_document`, `detail
 
 **Repository:** [github.com/Aivar-sanjeev/kyc-Document-processing](https://github.com/Aivar-sanjeev/kyc-Document-processing)
 
+### Project duration (`main`: first commit → latest)
+
+| | |
+|---|---|
+| **First commit** (root of `main`) | `3f9cdcc` — **2026-05-04 00:03:42 UTC** |
+| **Latest commit** (`main` tip) | `d9cd9f9` — **2026-05-04 06:26:33 UTC** |
+| **Elapsed (root → tip)** | **6 h 22 m 51 s** (22,971 s) across **5** commits on `main` |
+
+Recompute (PowerShell, repo root):
+
+```powershell
+$root = git rev-list --max-parents=0 main; $head = git rev-parse main
+$t0 = [int](git show -s --format=%at $root); $t1 = [int](git show -s --format=%at $head)
+$ts = [TimeSpan]::FromSeconds($t1 - $t0)
+"Elapsed: {0}d {1}h {2}m {3}s  (commits: {4})" -f $ts.Days, $ts.Hours, $ts.Minutes, $ts.Seconds, (git rev-list --count main)
+```
+
 Use the table for each **`POST /process`** benchmark or batch test run. Record **started/finished** in UTC and **wall duration** with a stopwatch or script wrapper.
 
 ### Tech stack
