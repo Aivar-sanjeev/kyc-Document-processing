@@ -4,6 +4,16 @@ API service for Indian identity documents: classify a scan, extract structured f
 
 ---
 
+## Demo
+
+Playback works in the browser on GitHub (use the controls to play). If the embed does not load, open the file in the repo: [`Demo video/Untitled design.mp4`](Demo%20video/Untitled%20design.mp4).
+
+<video src="Demo%20video/Untitled%20design.mp4" controls playsinline width="100%">
+  <a href="Demo%20video/Untitled%20design.mp4">Download or open the demo video</a>
+</video>
+
+---
+
 ## Architecture
 
 High-level flow: **client** sends `POST /process` with an image or PDF; **FastAPI** receives it; a **document type router** (vision classification in the structured JSON response) rejects unsupported types; **NVIDIA NIM Vision LLM** performs extraction; then **field extraction**, **validators**, and the **output masker** run before a single **JSON response** (fields, confidence, warnings, masked flags).
@@ -118,6 +128,7 @@ Do not log full LLM responses in production. This project logs high-level metada
 |------|---------|
 | `app/main.py` | FastAPI app and routes. |
 | `app/pipeline/` | Loader, NIM client, prompts, process orchestration, mask, MRZ, validate. |
+| `Demo video/Untitled design.mp4` | Screen recording demo (embedded in README). |
 | `Architecture/Architecture.png` | System architecture diagram. |
 | `ARCHITECTURE.md` | Written architecture rationale. |
 | `tests/` | Pytest suite and synthetic PNG fixtures. |
