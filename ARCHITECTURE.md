@@ -1,5 +1,7 @@
 # KYC Document Processing Pipeline — Architecture
 
+Visual overview: [Architecture/Architecture.png](Architecture/Architecture.png) (also embedded in the repository [README](README.md)).
+
 ## Goals
 
 Deliver a single HTTP API that accepts a scan (PNG, JPEG, or PDF first page), classifies one of five Indian identity document types, extracts structured fields with confidences, validates high-risk fields, enforces Aadhaar masking at the output boundary, and degrades gracefully when the document is not supported.
